@@ -9,17 +9,47 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-    <!--bean id="propertyConfigurer"
+    <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
           p:location="/WEB-INF/jdbc.properties" />
 
-<bean id="dataSource"
-    class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-    p:driverClassName="${jdbc.driverClassName}"
-    p:url="${jdbc.url}"
-    p:username="${jdbc.username}"
-    p:password="${jdbc.password}" /-->
+    <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+        p:driverClassName="${jdbc.driverClassName}"
+        p:url="${jdbc.url}"
+        p:username="${jdbc.username}"
+        p:password="${jdbc.password}" />
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+        <bean id="sessionFactory" 
+              class="ord.springframework.orm.hibernate4.LocalSessionFactoryBean">
+            <property name="datasource" ref="datasource"/>
+            <property name="annotatedClasses" >
+                <list>
+                    <value>model.metier.Users.Clients</value>
+                    <value>model.metier.Users.Livres</value>
+                    <value>model.metier.Users.Auteurs</value>
+                    <value>model.metier.Users.Editeurs</value>
+                    <value>model.metier.Users.Ligcdes</value>
+                    <value>model.metier.Users.LigcdesId</value>
+                    <value>model.metier.Users.Villes</value>
+                    
+                </list>
+            </property>
+            <property name="hibernateProperties" >
+                <props>
+                    <prop key="hibernate.dialect"> org.hibernate.dialect.MySQLDialect</prop>
+                </props>
+            </property>  
+        </bean>
+        
+        <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate" 
+              p:sessionFactory-ref="sessionFactory" />
+        
+        <bean id="factoryDao" class="factory.FactoryDao" />
+     
+            
+        
+        
 
 </beans>

@@ -5,15 +5,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>Insta Stock Manager</title>
     </head>
 
     <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project.</p>
-        <p><i>To display a different welcome page for this project, modify</i>
-            <tt>index.jsp</tt> <i>, or create your own welcome page then change
-                the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
-                welcome page and also update the welcome-file setting in</i>
-            <tt>web.xml</tt>.</p>
+    <nav>
+        <ul>
+            <li><a href="<%=request.getContextPath()%>/user/login.htm">Login</a></li>
+            <li><a href="<%=request.getContextPath()%>/user/inscription.htm">Inscription</a></li>
+            <li><a href="<%=request.getContextPath()%>/livre/livres.htm">Les livres</a></li>
+            <li><a href="<%=request.getContextPath()%>/livre/ajout.htm">Ajouter un livre</a></li>
+        </ul>
+    </nav>
+        <p>${user.nom}</p>
     </body>
 </html>
