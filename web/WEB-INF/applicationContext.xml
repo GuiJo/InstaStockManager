@@ -22,25 +22,30 @@
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
         <bean id="sessionFactory" 
-              class="ord.springframework.orm.hibernate4.LocalSessionFactoryBean">
-            <property name="datasource" ref="datasource"/>
+              class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+            <property name="dataSource" ref="dataSource"/>
             <property name="annotatedClasses" >
                 <list>
-                    <value>model.metier.Users.Clients</value>
-                    <value>model.metier.Users.Livres</value>
-                    <value>model.metier.Users.Auteurs</value>
-                    <value>model.metier.Users.Editeurs</value>
-                    <value>model.metier.Users.Ligcdes</value>
-                    <value>model.metier.Users.LigcdesId</value>
-                    <value>model.metier.Users.Villes</value>
+                    <value>model.metier.Categorie</value>
+                    <value>model.metier.Client</value>
+                    <value>model.metier.Commande</value>
+                    <value>model.metier.Employe</value>
+                    <value>model.metier.Fournisseur</value>
+                    <value>model.metier.LigneCommande</value>
+                    <value>model.metier.Particulier</value>
+                    <value>model.metier.Produit</value>
+                    <value>model.metier.StockProduit</value>
+                     <value>model.metier.Professionnel</value>
                     
                 </list>
             </property>
             <property name="hibernateProperties" >
                 <props>
                     <prop key="hibernate.dialect"> org.hibernate.dialect.MySQLDialect</prop>
+                    <prop key="hibernate.hbm2ddl.auto">create</prop>
                 </props>
             </property>  
+            
         </bean>
         
         <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate" 
@@ -48,8 +53,6 @@
         
         <bean id="factoryDao" class="factory.FactoryDao" />
      
-            
-        
         
 
 </beans>

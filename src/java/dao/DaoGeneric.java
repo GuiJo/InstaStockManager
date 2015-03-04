@@ -25,7 +25,7 @@ import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 public abstract class DaoGeneric<T extends Metier>  extends HibernateDaoSupport{
 
-    protected HibernateTemplate hibernateTemp;
+   
     
     public DaoGeneric() {
        
@@ -35,8 +35,10 @@ public abstract class DaoGeneric<T extends Metier>  extends HibernateDaoSupport{
 
     public void insert(Metier objet) {
        
-        getHibernateTemplate().getSessionFactory().getCurrentSession().setFlushMode(FlushMode.AUTO);
-       getHibernateTemplate().save(objet);
+        Session session = getHibernateTemplate().getSessionFactory().openSession();
+        session.setFlushMode(FlushMode.AUTO);
+        session.save(objet);
+        session.flush();
        
     }
 
@@ -57,15 +59,7 @@ public abstract class DaoGeneric<T extends Metier>  extends HibernateDaoSupport{
         
     }
 
-    public HibernateTemplate getHibernateTemp() {
-        return hibernateTemp;
-    }
-
-
-    public void setHibernateTemp(HibernateTemplate hibernateTemp) {
-        this.hibernateTemp = hibernateTemp;
-    }
-
+  
    
     
     

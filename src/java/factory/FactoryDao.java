@@ -19,7 +19,7 @@ public class FactoryDao {
     
     private HibernateTemplate hibernateTemp;
     
-    public static DaoGeneric<?> getDao(Class classe){
+    public  DaoGeneric<?> getDao(Class classe){
         
         DaoGeneric<?> dao = null ;
         try {
@@ -27,7 +27,7 @@ public class FactoryDao {
            Class classeDao = Class.forName(daoString);
             
           dao = (DaoGeneric<?>) classeDao.newInstance();
-          //dao.setHibernateTemp(hibernateTemp);
+          dao.setHibernateTemplate(hibernateTemp);
             
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(FactoryDao.class.getName()).log(Level.SEVERE, null, ex);
