@@ -31,7 +31,8 @@ public class IndexController {
     @RequestMapping(value = "/index")
     public String home()
     {
-        return "index";
+        
+        return "login";
         
     }
  
