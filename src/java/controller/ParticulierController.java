@@ -62,8 +62,8 @@ public class ParticulierController {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        DaoGeneric<Client> dao = (DaoGeneric<Client>) factoryDao.getDao(Particulier.class);
-        Client client = dao.SelectById(Particulier.class.toString(),id);
+        DaoGeneric dao = factoryDao.getDao(Particulier.class);
+        Client client = (Client) dao.SelectById(Particulier.class.toString(),id);
         model.addAttribute("user", client);
         return "inscription";
     }
