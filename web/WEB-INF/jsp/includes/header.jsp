@@ -7,9 +7,16 @@
 
         <!-- start: Meta -->
         <meta charset="utf-8">
-        <title>StockManager</title>
+        <title>Insta Stock Manager</title>
        
+              <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <!--external css-->
+        <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
+        <!-- Custom styles for this template -->
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/style-responsive.css" rel="stylesheet">
 
         <!-- start: CSS -->
         <link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,106 +30,28 @@
        
         <link rel="shortcut icon" href="img/favicon.ico">
         <!-- end: Favicon -->
-
-    </head>
-
-    <body>
-        <c:if test="${sessionScope.userConnecte == null}">
-            <c:redirect url="login.stk"></c:redirect>
-        </c:if>
-        <!-- start: Header -->
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="index.html"><span>StockManager</span></a>
-
-                    <!-- start: Header Menu -->
-                    <div class="nav-no-collapse header-nav">
-                        <ul class="nav pull-right">
-                            <li class="dropdown hidden-phone">
-                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="icon-bell"></i>
-                                    <span class="badge red">
-                                        11 </span>
-                                </a>
-                                <ul class="dropdown-menu notifications">
-                                    <li class="dropdown-menu-title">
-                                        <span>Vous avez 11 alerte de stock</span>
-                                        <a href="#refresh"><i class="icon-repeat"></i></a>
-                                    </li>	
-                                    <li class="warning">
-                                        <a href="#">
-                                            <span class="icon red"><i class="icon-shopping-cart"></i></span>
-                                            <span class="message">Produit 100283</span>
-
-                                        </a>
-                                    </li>
-                                    <li class="warning">
-                                        <a href="#">
-                                            <span class="icon red"><i class="icon-shopping-cart"></i></span>
-                                            <span class="message">Produit 100283</span>
-
-                                        </a>
-                                    </li>
-                                    <li class="warning">
-                                        <a href="#">
-                                            <span class="icon red"><i class="icon-shopping-cart"></i></span>
-                                            <span class="message">Produit 100283</span>
-
-                                        </a>
-                                    </li>
-                                    <li class="warning">
-                                        <a href="#">
-                                            <span class="icon red"><i class="icon-shopping-cart"></i></span>
-                                            <span class="message">Produit 100283</span>
-
-                                        </a>
-                                    </li>
-                                    <li class="warning">
-                                        <a href="#">
-                                            <span class="icon red"><i class="icon-shopping-cart"></i></span>
-                                            <span class="message">Produit 100283</span>
-
-                                        </a>
-                                    </li>
-                                    <li class="warning">
-                                        <a href="#">
-                                            <span class="icon red"><i class="icon-shopping-cart"></i></span>
-                                            <span class="message">Produit 100283</span>
-
-                                        </a>
-                                    </li>
-                                    <li class="dropdown-menu-sub-footer">
-                                        <a>View all notifications</a>
-                                    </li>	
-                                </ul>
-                            </li>
-
-
-                            <!-- start: User Dropdown -->
-                            <li class="dropdown">
-                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="halflings-icon white user"></i>${sessionScope.userConnecte.firstNameEmployee}
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-menu-title">
-                                        <span>Paramètre Compte</span>
-                                    </li>
-                                    <li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-                                    <li><a href="#"><i class="halflings-icon off"></i> Deconnection</a></li>
-                                </ul>
-                            </li>
-                            <!-- end: User Dropdown -->
-                        </ul>
-                    </div>
-                    <!-- end: Header Menu -->
-
-                </div>
+        
+ <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>Insta Stock Manager</b></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+               
+                <!--  notification end -->
             </div>
-        </div>
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="login.html">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+    

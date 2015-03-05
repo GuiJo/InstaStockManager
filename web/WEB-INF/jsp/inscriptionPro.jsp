@@ -13,13 +13,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Inscription</h1>
+        <h1>Inscription Pro</h1>
         
         <form:form action="" method="post" modelAttribute="user">
-            <form:label path="nom">Nom :</form:label><br>
-            <form:input path="nom"/><br>
-            <form:label path="prenom">Prénom :</form:label><br>
-            <form:input path="prenom"/><br>
+           
+            <form:label path="siret">Siret :</form:label><br>
+            <form:input path="siret"/><br>
             <form:label path="email">Email :</form:label><br>
             <form:input path="email"/><br>
             <form:label path="adresse">Adresse :</form:label><br>

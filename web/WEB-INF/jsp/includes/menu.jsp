@@ -2,34 +2,81 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- start: Header -->
 
-<div class="container-fluid-full">
-    <div class="row-fluid">
+    <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">Bonjour Mr Johan CARRIEL</h5>
+              	  	
+                  <li class="mt">
+                      <a href="index.html">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
 
-        <!-- start: Main Menu -->
-        <div id="sidebar-left" class="span2">
-            <div class="nav-collapse sidebar-nav">
-                <ul class="nav nav-tabs nav-stacked main-menu">
-                    <li><a href="index.htm"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Accueil</span></a></li>	
-                    <li><a href=""><i class="icon-envelope"></i><span class="hidden-tablet"> Produit</span></a></li>
-                    <li><a href=""><i class="icon-tasks"></i><span class="hidden-tablet"> Clients</span></a></li>
-                    <li><a href="#"><i class="icon-eye-open"></i><span class="hidden-tablet"> Fournisseur</span></a></li>
-                    <li><a href="#"><i class="icon-dashboard"></i><span class="hidden-tablet"> Facturation</span></a></li>
-                    <li>
-                        <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Administration</span></a>
-                        <ul>
-                            <li><a class="submenu" href=""><i class="icon-file-alt"></i><span class="hidden-tablet"> Ajout de compte</span></a></li>
-                            <li><a class="submenu" href=""><i class="icon-file-alt"></i><span class="hidden-tablet"> Modification de compte</span></a></li>
-                        </ul>	
-                    </li>
-                   
-                </ul>
-            </div>
-        </div>
-        <!-- end: Main Menu -->
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>Clients Pro ou Particuliers</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="<%=request.getContextPath()%>/inscription.htm">Nouveau Particulier</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/pro/inscription.htm">Nouveau Professionnel</a></li>
+                          <br/>
+                          <li><a  href="<%=request.getContextPath()%>/LesParticuliers.htm">Liste des Particuliers</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/pro/LesPro.htm">Liste des Professionnels</a></li>
+                          <li><a  href="panels.html">Supprimer un utilisateur</a></li>
+                      </ul>
+                  </li>
 
-        <noscript>
-        <div class="alert alert-block span10">
-            <h4 class="alert-heading">Warning!</h4>
-            <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-        </div>
-        </noscript>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Commande</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="calendar.html">Passer une commande</a></li>
+                          <li><a  href="gallery.html">Lister les commandes</a></li>
+                          <li><a  href="todo_list.html">Supprimer une commande</a></li>
+                      </ul>
+                  </li>
+                   <li class="mt">
+                      <a href="index.html">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Impression d'une facture (PDF)</span>
+                      </a>
+                  </li>
+                
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      <!-- start: JavaScript-->
+<!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
+<!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+
+<!-- end: JavaScript-->

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import model.metier.Client;
 import model.metier.Metier;
 import model.metier.Particulier;
+import model.metier.Professionnel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author johancarriel
  */
 @Controller
-//@RequestMapping("/particulier")
-public class ParticulierController {
+@RequestMapping("/pro")
+public class ProController {
     
     
      private FactoryDao factoryDao;
@@ -38,24 +39,24 @@ public class ParticulierController {
         this.factoryDao = factoryDao;
     }
     
-      @RequestMapping("/LesParticuliers")
+      @RequestMapping("/LesPro")
     public String allParticuliers(Model m) {
-        DaoGeneric dao = factoryDao.getDao(Particulier.class);
-        List<Particulier> l = dao.selectAll(Particulier.class);
+        DaoGeneric dao = factoryDao.getDao(Professionnel.class);
+        List<Professionnel> l = dao.selectAll(Professionnel.class);
         m.addAttribute("myList", l);
-        return "listParticuliers";
+        return "listProfessionnels";
     }
     
      @RequestMapping(value = "/inscription", method = RequestMethod.GET)
     public String insert(Model model) {
 
         model.addAttribute("user", new Particulier());
-        return "inscriptionPart";
+        return "inscriptionPro";
     }
 
     @RequestMapping(value = "/inscription", method = RequestMethod.POST)
     public String insert(@ModelAttribute(value = "user") Particulier user) {
-        DaoGeneric dao = factoryDao.getDao(Particulier.class);
+        DaoGeneric dao = factoryDao.getDao(Professionnel.class);
         dao.insert(user);
         return "index1";
 
@@ -71,8 +72,8 @@ public class ParticulierController {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        DaoGeneric dao = factoryDao.getDao(Particulier.class);
-        Client client = (Client) dao.SelectById(Particulier.class.toString(),id);
+        DaoGeneric dao = factoryDao.getDao(Professionnel.class);
+        Client client = (Client) dao.SelectById(Professionnel.class.toString(),id);
         model.addAttribute("user", client);
         return "index";
     }
@@ -86,7 +87,7 @@ public class ParticulierController {
     
      @RequestMapping(value = "/suppression", method = RequestMethod.POST)
     public String delete(@ModelAttribute(value = "user") Client user) {
-        DaoGeneric dao = factoryDao.getDao(Particulier.class);
+        DaoGeneric dao = factoryDao.getDao(Professionnel.class);
         dao.delete(user);
         return "index";
     }
