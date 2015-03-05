@@ -27,7 +27,7 @@ import javax.persistence.Table;
 @Table(name="employe"
     ,catalog="Stock"
 )
-public class Employe implements Serializable{
+public class Employe extends Metier implements Serializable{
     
     private int id;
     private String nom;

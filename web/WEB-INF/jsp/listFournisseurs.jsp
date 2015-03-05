@@ -29,9 +29,8 @@
             <thead>
                 <tr>
                     <th>Id Professionnels</th>
-                   
+                    <th>nom</th>
                     <th>siret</th>
-                    <th>email</th>
                     <th>Adresse</th>
                     <th>Ville</th>
                     <th>Telephone</th>
@@ -42,8 +41,8 @@
                     <tr>
                         <td>${element.id}</td>
                       
+                        <td class="center">${element.nom}</td>
                         <td class="center">${element.siret}</td>
-                        <td class="center">${element.email}</td>
                         <td class="center">
                             ${element.adresse} 
                         </td>

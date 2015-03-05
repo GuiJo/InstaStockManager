@@ -20,7 +20,7 @@
           <section class="wrapper site-min-height">
                
    
-        <li><a href="#">Liste des prof</a></li>
+        <li><a href="#">Liste des particuliers</a></li>
     </ul>
 
     <div class="row-fluid sortable">		
@@ -28,27 +28,17 @@
         <table class="table table-striped table-bordered bootstrap-datatable datatable">
             <thead>
                 <tr>
-                    <th>Id Professionnels</th>
-                   
-                    <th>siret</th>
-                    <th>email</th>
-                    <th>Adresse</th>
-                    <th>Ville</th>
-                    <th>Telephone</th>
+                    <th>Id Particuliers</th>
+                    <th>Nom</th>
+                    <th>prenom</th>
                 </tr>
             </thead>   
             <tbody>
                 <c:forEach items="${myList}" var="element"> 
                     <tr>
                         <td>${element.id}</td>
-                      
-                        <td class="center">${element.siret}</td>
-                        <td class="center">${element.email}</td>
-                        <td class="center">
-                            ${element.adresse} 
-                        </td>
-                        <td class="center">${element.ville} </td>
-                        <td class="center">${element.telephone}</td>
+                        <td>${element.nom}</td>
+                        <td class="center">${element.prenom}</td>
                        
                     </tr>
                 </c:forEach>

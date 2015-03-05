@@ -26,9 +26,13 @@
                       <ul class="sub">
                           <li><a  href="<%=request.getContextPath()%>/inscription.htm">Nouveau Particulier</a></li>
                           <li><a  href="<%=request.getContextPath()%>/inscriptionpro.htm">Nouveau Professionnel</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/inscriptionemp.htm">Nouvel Employé</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/inscriptionfournisseur.htm">Nouveau Fournisseur</a></li>
                           <br/>
                           <li><a  href="<%=request.getContextPath()%>/LesParticuliers.htm">Liste des Particuliers</a></li>
                           <li><a  href="<%=request.getContextPath()%>/LesPro.htm">Liste des Professionnels</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/LesEmployes.htm">Liste des Employes</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/LesFournisseurs.htm">Liste des Fournisseurs</a></li>
                           <li><a  href="panels.html">Supprimer un utilisateur</a></li>
                       </ul>
                   </li>
