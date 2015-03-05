@@ -22,10 +22,13 @@
             <form:input path="prenom"/><br>
             <form:label path="email">Email :</form:label><br>
             <form:input path="email"/><br>
-            <form:label path="mdp">Password :</form:label><br>
-            <form:password path="mdp"/><br>
-            <form:label path="villes">Ville :</form:label><br>
-            <form:select itemLabel="nomVille" itemValue="cp" items="${lVilles}" path="villes.cp"/>
+            <form:label path="adresse">Adresse :</form:label><br>
+            <form:input path="adresse"/><br>
+            <form:label path="telephone">Telephone :</form:label><br>
+            <form:input path="telephone"/><br>
+             <form:label path="ville">Ville :</form:label><br>
+            <form:input path="ville"/><br>
+           
             <input type="submit" value="Valider" />
         </form:form>
         

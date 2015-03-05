@@ -33,8 +33,8 @@ public abstract class DaoGeneric<T extends Metier>  extends HibernateDaoSupport{
     
     
 
-    public void insert(Metier objet) {
-       
+    public void insert(T objet) {
+        System.out.println(objet);
         Session session = getHibernateTemplate().getSessionFactory().openSession();
         session.setFlushMode(FlushMode.AUTO);
         session.save(objet);
@@ -42,23 +42,32 @@ public abstract class DaoGeneric<T extends Metier>  extends HibernateDaoSupport{
        
     }
 
-    public void update(Metier objet) {
+    public void update(T objet) {
         
-      getHibernateTemplate().update(objet);
+       Session session = getHibernateTemplate().getSessionFactory().openSession();
+        session.setFlushMode(FlushMode.AUTO);
+        session.update(objet);
+        session.flush();
     }
 
-    public void delete(Metier objet) {
+    public void delete(T objet) {
         
        getHibernateTemplate().delete(objet);
     }
 
-    public List<Metier> selectAll(Class metier) {
+    public List<T> selectAll(Class metier) {
        
-        List<Metier> l = getHibernateTemplate().loadAll(metier);
+        List<T> l = getHibernateTemplate().loadAll(metier);
         return l;
         
     }
 
+    public T SelectById(String metier,int id){
+      T objet = (T) getHibernateTemplate().get(metier, id);
+                
+                 return objet;
+    }
+    
   
    
     
