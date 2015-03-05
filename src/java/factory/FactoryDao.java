@@ -39,7 +39,7 @@ public class FactoryDao {
         return hibernateTemp;
     }
 
-   @Autowired
+   
     public void setHibernateTemp(HibernateTemplate hibernateTemp) {
         this.hibernateTemp = hibernateTemp;
     }

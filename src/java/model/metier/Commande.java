@@ -11,6 +11,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,19 +33,23 @@ public class Commande extends Metier implements Serializable {
       //private Set<LigneCommande> ligneCmd  = new HashSet(0);
       private Employe employe;
       private Client client;
+      private String date;
       
 
     public Commande() {
     }
 
-    public Commande(int id, Employe employe, Client client) {
+    public Commande(int id, Employe employe, Client client, String date) {
         this.id = id;
         this.employe = employe;
         this.client = client;
+        this.date = date;
     }
+
   
     
     @Id
+     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="id", unique=true, nullable=false)
     public int getId() {
         return id;
@@ -72,6 +78,17 @@ public class Commande extends Metier implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
+
+     @Column(name="date", length=50)
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
+    
     
    //    @OneToMany(mappedBy = "commande")
    // public Set<LigneCommande> getLigneCmd() {
@@ -84,12 +101,9 @@ public class Commande extends Metier implements Serializable {
 
     @Override
     public String toString() {
-        return "Commande{" + "id=" + id + ", ligneCmd=" + ", employe=" + employe + ", client=" + client + '}';
+        return "Commande{" + "id=" + id + ", employe=" + employe + ", client=" + client + ", date=" + date + '}';
     }
 
-   
-   
-      
      
       
       
