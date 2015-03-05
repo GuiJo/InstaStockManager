@@ -10,8 +10,6 @@ import factory.FactoryDao;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import model.metier.Client;
-import model.metier.Metier;
-import model.metier.Particulier;
 import model.metier.Professionnel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author johancarriel
  */
 @Controller
-@RequestMapping("/pro")
+//@RequestMapping("/pro")
 public class ProController {
     
     
@@ -40,29 +38,29 @@ public class ProController {
     }
     
       @RequestMapping("/LesPro")
-    public String allParticuliers(Model m) {
+    public String allProfessionnels(Model m) {
         DaoGeneric dao = factoryDao.getDao(Professionnel.class);
         List<Professionnel> l = dao.selectAll(Professionnel.class);
         m.addAttribute("myList", l);
         return "listProfessionnels";
     }
     
-     @RequestMapping(value = "/inscription", method = RequestMethod.GET)
+     @RequestMapping(value = "/inscriptionpro", method = RequestMethod.GET)
     public String insert(Model model) {
 
-        model.addAttribute("user", new Particulier());
+        model.addAttribute("user", new Professionnel());
         return "inscriptionPro";
     }
 
-    @RequestMapping(value = "/inscription", method = RequestMethod.POST)
-    public String insert(@ModelAttribute(value = "user") Particulier user) {
+    @RequestMapping(value = "/inscriptionpro", method = RequestMethod.POST)
+    public String insert(@ModelAttribute(value = "user") Professionnel user) {
         DaoGeneric dao = factoryDao.getDao(Professionnel.class);
         dao.insert(user);
         return "index1";
 
     }
     
-    @RequestMapping(value = "/modification", method = RequestMethod.GET)
+    @RequestMapping(value = "/modificationpro", method = RequestMethod.GET)
     public String update(Model model, HttpServletRequest request) {
         
         String ids = request.getParameter("id");
@@ -78,14 +76,14 @@ public class ProController {
         return "index";
     }
 
-    @RequestMapping(value = "/modification", method = RequestMethod.POST)
+    @RequestMapping(value = "/modificationpro", method = RequestMethod.POST)
     public String update(@ModelAttribute(value = "user") Client user) {
         DaoGeneric dao = factoryDao.getDao(Client.class);
         dao.update(user);
         return "index";
     }
     
-     @RequestMapping(value = "/suppression", method = RequestMethod.POST)
+     @RequestMapping(value = "/suppressionpro", method = RequestMethod.POST)
     public String delete(@ModelAttribute(value = "user") Client user) {
         DaoGeneric dao = factoryDao.getDao(Professionnel.class);
         dao.delete(user);

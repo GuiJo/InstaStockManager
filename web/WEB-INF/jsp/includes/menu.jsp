@@ -25,10 +25,10 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="<%=request.getContextPath()%>/inscription.htm">Nouveau Particulier</a></li>
-                          <li><a  href="<%=request.getContextPath()%>/pro/inscription.htm">Nouveau Professionnel</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/inscriptionpro.htm">Nouveau Professionnel</a></li>
                           <br/>
                           <li><a  href="<%=request.getContextPath()%>/LesParticuliers.htm">Liste des Particuliers</a></li>
-                          <li><a  href="<%=request.getContextPath()%>/pro/LesPro.htm">Liste des Professionnels</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/LesPro.htm">Liste des Professionnels</a></li>
                           <li><a  href="panels.html">Supprimer un utilisateur</a></li>
                       </ul>
                   </li>
