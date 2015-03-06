@@ -62,7 +62,7 @@ public class Categorie extends Metier implements Serializable{
      
     @Override
     public String toString() {
-        return "Categorie{" + "id=" + id + ", nom=" + nom + '}';
+        return nom;
     }
     
     

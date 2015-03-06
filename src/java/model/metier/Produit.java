@@ -36,20 +36,21 @@ public class Produit extends Metier implements Serializable{
     private int prix;
     private String description;
     private Categorie categorie;
+    private int quantite;
     private Set<LigneCommande> ligneCmd = new HashSet(0);
     
 
     public Produit() {
     }
 
-    public Produit(int id, String nom, int prix, String description) {
-        this.id = id;
+    public Produit(String nom, int prix, String description, Categorie categorie, int quantite) {
         this.nom = nom;
         this.prix = prix;
         this.description = description;
+        this.categorie = categorie;
+        this.quantite = quantite;
     }
-    
-    
+   
     @Id
      @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="id", unique=true, nullable=false)
@@ -79,7 +80,7 @@ public class Produit extends Metier implements Serializable{
         this.prix = prix;
     }
     
-     @ManyToOne(fetch=FetchType.LAZY)
+     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="id_Categorie")
     public Categorie getCategorie() {
         return categorie;
@@ -109,14 +110,18 @@ public class Produit extends Metier implements Serializable{
         this.ligneCmd = ligneCmd;
     }
 
-    
-    @Override
-    public String toString() {
-        return "Produit{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", description=" + description  +"'}'";
+    @Column(name="quantite", nullable=false)
+    public int getQuantite() {
+        return quantite;
     }
 
-    
-    
-   
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
+    @Override
+    public String toString() {
+        return "Produit{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", description=" + description + ", categorie=" + categorie + ", quantite=" + quantite + ", ligneCmd=" + ligneCmd + '}';
+    }
     
 }

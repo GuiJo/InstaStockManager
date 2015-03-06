@@ -36,6 +36,20 @@
                           <li><a  href="panels.html">Supprimer un utilisateur</a></li>
                       </ul>
                   </li>
+                  
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>Produits</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="<%=request.getContextPath()%>/ajoutCat.htm">Ajouter Catégorie</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/ajoutProd.htm">Ajouter Produit</a></li>
+                          <br/>
+                          <li><a  href="<%=request.getContextPath()%>/LesCat.htm">Liste des Catégories</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/LesProd.htm">Liste des Produits</a></li>
+                      </ul>
+                  </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
