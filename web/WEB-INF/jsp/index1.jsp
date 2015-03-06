@@ -18,20 +18,7 @@
       <section id="main-content">
           <section class="wrapper site-min-height">
                
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		  <nav>
-        <ul>
-            <li><a href="<%=request.getContextPath()%>/particulier/inscription.htm">Inscription</a></li>
-            <li><a href="#">Inscription</a></li>
-            <li><a href="#">Les livres</a></li>
-            <li><a href="#">Ajouter un livre</a></li>
-        </ul>
-    </nav>
-          		</div>
-          	</div>
-			
+          	
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 

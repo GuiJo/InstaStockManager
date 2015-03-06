@@ -34,19 +34,21 @@ public class Commande extends Metier implements Serializable {
       private Employe employe;
       private Client client;
       private String date;
+      private Produit produit;
+      private int quantite;
       
 
     public Commande() {
     }
 
-    public Commande(int id, Employe employe, Client client, String date) {
-        this.id = id;
+    public Commande(Employe employe, Client client, String date, Produit produit, int quantite) {
         this.employe = employe;
         this.client = client;
         this.date = date;
+        this.produit = produit;
+        this.quantite = quantite;
     }
 
-  
     
     @Id
      @GeneratedValue(strategy= GenerationType.AUTO)
@@ -78,6 +80,8 @@ public class Commande extends Metier implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
+    
+    
 
      @Column(name="date", length=50)
     public String getDate() {
@@ -87,6 +91,27 @@ public class Commande extends Metier implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="id_produit")
+    public Produit getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Produit produit) {
+        this.produit = produit;
+    }
+
+    @Column(name="quantite")
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+    
+    
     
     
     

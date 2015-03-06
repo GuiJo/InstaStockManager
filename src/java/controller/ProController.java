@@ -71,7 +71,7 @@ public class ProController {
             e.printStackTrace();
         }
         DaoGeneric dao = factoryDao.getDao(Professionnel.class);
-        Client client = (Client) dao.SelectById(Professionnel.class.toString(),id);
+        Client client = (Client) dao.SelectById(Professionnel.class,id);
         model.addAttribute("user", client);
         return "index";
     }

@@ -62,8 +62,10 @@ public abstract class DaoGeneric<T extends Metier>  extends HibernateDaoSupport{
         
     }
 
-    public Metier SelectById(String metier,int id){
-      Metier objet = (Metier) getHibernateTemplate().get(metier, id);
+    public Metier SelectById(Class metier,int id){
+        Session session = getHibernateTemplate().getSessionFactory().openSession();
+      
+        Metier objet = (Metier) session.load(metier, id);
                 
                  return objet;
     }

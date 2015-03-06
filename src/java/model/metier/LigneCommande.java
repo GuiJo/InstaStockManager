@@ -64,7 +64,7 @@ public class LigneCommande extends Metier implements Serializable{
         this.quantite = quantite;
     }
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="id_Produit")
     public Produit getProduit() {
         return produit;
@@ -74,7 +74,7 @@ public class LigneCommande extends Metier implements Serializable{
         this.produit = produit;
     }
     
-   @ManyToOne(fetch=FetchType.LAZY)
+   @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="id_Commande")
     public Commande getCommande() {
         return commande;

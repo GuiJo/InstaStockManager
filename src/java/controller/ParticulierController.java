@@ -72,7 +72,7 @@ public class ParticulierController {
             e.printStackTrace();
         }
         DaoGeneric dao = factoryDao.getDao(Particulier.class);
-        Client client = (Client) dao.SelectById(Particulier.class.toString(),id);
+        Client client = (Client) dao.SelectById(Particulier.class,id);
         model.addAttribute("user", client);
         return "index";
     }

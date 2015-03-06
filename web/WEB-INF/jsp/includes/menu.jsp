@@ -57,7 +57,7 @@
                           <span>Commande</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Passer une commande</a></li>
+                          <li><a  href="<%=request.getContextPath()%>/ajoutCom.htm">Passer une commande</a></li>
                           <li><a  href="gallery.html">Lister les commandes</a></li>
                           <li><a  href="todo_list.html">Supprimer une commande</a></li>
                       </ul>

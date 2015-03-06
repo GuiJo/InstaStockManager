@@ -72,7 +72,7 @@ public class EmployeController {
             e.printStackTrace();
         }
         DaoGeneric dao = factoryDao.getDao(Employe.class);
-        Client client = (Client) dao.SelectById(Employe.class.toString(),id);
+        Client client = (Client) dao.SelectById(Employe.class,id);
         model.addAttribute("user", client);
         return "index";
     }

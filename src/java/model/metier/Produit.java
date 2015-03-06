@@ -37,7 +37,7 @@ public class Produit extends Metier implements Serializable{
     private String description;
     private Categorie categorie;
     private int quantite;
-    private Set<LigneCommande> ligneCmd = new HashSet(0);
+    //private Set<LigneCommande> ligneCmd = new HashSet(0);
     
 
     public Produit() {
@@ -92,7 +92,7 @@ public class Produit extends Metier implements Serializable{
 
    
 
-     @Column(name="description", nullable=false, length=50)
+     @Column(name="description", length=50)
     public String getDescription() {
         return description;
     }
@@ -101,14 +101,14 @@ public class Produit extends Metier implements Serializable{
         this.description = description;
     }
 
-    @OneToMany(mappedBy = "produit")
+    /*@OneToMany(mappedBy = "produit")
     public Set<LigneCommande> getLigneCmd() {
         return ligneCmd;
     }
 
     public void setLigneCmd(Set<LigneCommande> ligneCmd) {
         this.ligneCmd = ligneCmd;
-    }
+    }*/
 
     @Column(name="quantite", nullable=false)
     public int getQuantite() {
@@ -121,7 +121,7 @@ public class Produit extends Metier implements Serializable{
 
     @Override
     public String toString() {
-        return "Produit{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", description=" + description + ", categorie=" + categorie + ", quantite=" + quantite + ", ligneCmd=" + ligneCmd + '}';
+        return "Produit{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", description=" + description + ", categorie=" + categorie + ", quantite=" + quantite + "}";
     }
     
 }

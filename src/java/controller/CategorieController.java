@@ -72,7 +72,7 @@ public class CategorieController {
             e.printStackTrace();
         }
         DaoGeneric dao = factoryDao.getDao(Categorie.class);
-        Client client = (Client) dao.SelectById(Categorie.class.toString(),id);
+        Client client = (Client) dao.SelectById(Categorie.class,id);
         model.addAttribute("categorie", client);
         return "index";
     }

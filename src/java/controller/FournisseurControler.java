@@ -71,7 +71,7 @@ public class FournisseurControler {
             e.printStackTrace();
         }
         DaoGeneric dao = factoryDao.getDao(Fournisseur.class);
-        Client client = (Client) dao.SelectById(Fournisseur.class.toString(),id);
+        Client client = (Client) dao.SelectById(Fournisseur.class,id);
         model.addAttribute("user", client);
         return "index";
     }
